@@ -1,6 +1,6 @@
 Received: from mailserver.amaz0n-security.com (mailserver.amaz0n-security.com [192.0.2.123])
         by mx.google.com with ESMTPS id abc123def456
-        for <your.email@example.com>;
+        for <preethivarshala7@gmail.com>;
         Mon, 20 Nov 2023 09:45:22 -0800 (PST)
 Received-SPF: neutral (google.com: 192.0.2.123 is neither permitted nor denied by best guess record for domain of amaz0n-security.com) client-ip=192.0.2.123;
 Authentication-Results: mx.google.com;
@@ -12,7 +12,7 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         bh=def456ghi789=;
         b=abc123def456ghi789jkl012mno345pqr678stu901vwx234yza567bcd890efg123hij456klm789nop012qrs345tuv678wxy901zab234cde567fgh890
 From: "Amazon Account Security" <no-reply@amaz0n-security.com>
-To: <your.email@example.com>
+To: <preethivarshala7@gmail.com>
 Subject: URGENT: Unauthorized Login Attempt Detected
 Date: Mon, 20 Nov 2023 17:45:22 +0000
 Message-ID: <1234567890abc@amaz0n-security.com>
