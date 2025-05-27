@@ -1,0 +1,78 @@
+1) Email Metadata
+From: "Amazon Account Security" <no-reply@amaz0n-security.com>
+To: preethivarshala7@gmail.com
+Subject: URGENT: Unauthorized Login Attempt Detected
+Date: Mon, 20 Nov 2023 17:45:22 +0000
+
+2) Detailed Findings
+A] Suspicious Sender Address (Email Spoofing)
+Claimed Identity: "Amazon Account Security"
+
+Actual Sender Domain: amaz0n-security.com
+Red Flag: Uses a zero (0) instead of an "o" to mimic amazon.com.
+Legitimate Amazon Domains: amazon.com, amazonpay.com, amazonaws.com.
+Fake Domain Registered? Check via "WHOIS" Lookup.
+
+B] Email Header Analysis
+SPF (Sender Policy Framework)
+Result: neutral
+Meaning: The sender’s IP (192.0.2.123) is neither explicitly allowed nor denied.
+Expected for Amazon: pass (since Amazon has strict SPF records).
+
+DKIM (DomainKeys Identified Mail)
+Result: pass
+But: The domain is fake (amaz0n-security.com).
+Tactic: Attackers sometimes sign fake emails to appear legitimate.
+
+IP Address
+Sender IP: 192.0.2.123
+Red Flag: Part of the TEST-NET-1 range (reserved for documentation, not real servers).
+Legitimate Amazon IPs: Belong to AWS ranges (e.g., 52.94.x.x, 54.240.x.x).
+
+C] Content Analysis (Social Engineering Tactics)
+1. Urgent Language (Psychological Pressure)
+Phrases Used:
+"URGENT: Unauthorized Login Attempt Detected"
+"secure your account immediately"
+"temporarily restricted access"
+
+Goal: Panic the victim into clicking without thinking.
+
+2. Fake Login Link
+URL: http://amaz0n-security-verify.com/account/login?id=123456789
+Red Flags:
+Domain: amaz0n-security-verify.com (not amazon.com).
+HTTP (Not HTTPS): No encryption (data can be intercepted).
+Hover Test: The displayed text may hide the real URL.
+
+3. Generic Greeting
+"Dear Customer" (instead of your real name).
+Amazon always personalizes emails (e.g., "Dear [Your Name]").
+
+4. Fake Amazon Branding
+Logo Source: http://amaz0n-security.com/images/logo.png
+Red Flags:
+Hosted on a fake domain.
+Uses HTTP (no padlock icon in browser).
+
+5. Unusual Activity Claim
+"Login from Berlin, Germany (IP: 203.0.113.45)"
+IP Check: 203.0.113.45 is a reserved IP (used in examples, not real traffic).
+
+
+3) Conclusion: Phishing Confirmed
+This email is a phishing attempt due to:
+*Domain Spoofing (amaz0n-security.com).
+*Suspicious Headers (SPF: neutral, fake DKIM).
+*Urgency + Fake Link (to steal credentials).
+*Technical Inconsistencies (TEST-NET IP, HTTP logo).
+
+Recommended Actions:
+*Do NOT click any links.
+*Report to Amazon: Forward to stop-spoofing@amazon.com.
+*Check Legit Notifications: Always log in via amazon.com (not email links).
+
+4) Appendix: Tools Used for Analysis
+*Email Headers Analyzer: MXToolbox
+*Domain WHOIS Lookup: WHO.IS
+*IP Check: IPinfo.io
